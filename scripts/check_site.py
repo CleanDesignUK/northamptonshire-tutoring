@@ -31,6 +31,27 @@ for p in files:
 urls=len(re.findall(r'<loc>',(ROOT/'sitemap.xml').read_text('utf-8')))
 print(f'Checked {len(files)} generated HTML pages; sitemap entries: {urls}')
 if len(files)!=urls:errs.append(f'Expected {len(files)} sitemap URLs; found {urls}')
+
+# Site-launch regressions: branded previews, consent-aware tag, and honest reviews.
+from html import unescape
+reviews=json.loads((ROOT/'data/testimonials.json').read_text(encoding='utf-8'))
+logo=ROOT/'assets/images/nwt-group-social-1200x630.jpg'
+if not logo.exists():errs.append('Social preview image is missing')
+if 'GTM-56GZFL5S' not in (ROOT/'assets/js/gtm-consent.js').read_text(encoding='utf-8'):
+    errs.append('Google Tag Manager container is missing')
+for page in files:
+    data=page.read_text(encoding='utf-8')
+    rel=page.relative_to(ROOT).as_posix()
+    for token in ('nwt-group-social-1200x630.jpg','og:image:width','twitter:image','mobile-cards.js','gtm-consent.js'):
+        if token not in data:errs.append(f'{rel}: missing {token}')
+    if rel in ('index.html','about.html','contact.html'):
+        if 'id="nt-group-testimonials"' not in data:errs.append(f'{rel}: parent-group reviews missing')
+        for review in reviews:
+            if review['quote'] not in unescape(data):errs.append(f'{rel}: review wording changed ({review["name"]})')
+safe=(ROOT/'safeguarding.html').read_text(encoding='utf-8')
+if 'Guidance &amp; external reporting' in safe:
+    errs.append('External guidance panel still visible')
+
 if errs:
     print('\n'.join('ERROR '+e for e in errs))
     sys.exit(1)

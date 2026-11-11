@@ -230,7 +230,7 @@ def refresh_all():
         txt=p.read_text(encoding='utf8')
         # Preserve emergency contact guidance but remove the separate external-reporting panel.
         if kind=='safety':
-            txt=re.sub(r'<section class="section section-soft"><div class="container"><span class="eyebrow">Guidance &amp; external reporting</span>[\\s\\S]*?</section>','',txt,count=1)
+            txt=re.sub(r'<section class="section section-soft"><div class="container"><span class="eyebrow">Guidance &amp; external reporting</span>[\s\S]*?</section>','',txt,count=1)
         # Parent-group reviews are added to key conversion pages without rewriting the quotes.
         if kind in ('home','about','contact') and 'id="nt-group-testimonials"' not in txt:
             txt=txt.replace('</main>',group_review_section()+'</main>',1)
