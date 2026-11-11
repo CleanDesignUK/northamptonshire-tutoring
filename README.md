@@ -61,7 +61,7 @@ Do **not** edit the generated header/footer in all HTML pages individually. They
 - Access key installed from the request: `7cfb8b83-2221-4866-8be3-087c5dfedd46`.
 - Required enquiry fields: name, email, phone and message. Optional level and subject fields help qualification.
 - Hidden `botcheck` honeypot (not a visible checkbox), bot speed check, client-side phone validation, duplicate-attempt cooldown and provider-side spam filtering.
-- The form uses JSON AJAX so visitors stay on the same page. A successful submission shows a SweetAlert2 confirmation. If JavaScript is disabled, it does not submit or redirect; users can use WhatsApp/email instead.
+- The form uses JSON AJAX so people stay on the page, with a clear success or fallback error; ordinary HTML POST works if JavaScript is disabled.
 - **Before launch:** verify the Web3Forms key is active, points to the intended inbox and accepts submissions from your domain. Send *one real test enquiry* from the live domain. No live enquiries were sent during development.
 - **For stronger protection:** enable Web3Forms-supported invisible captcha / Turnstile on an eligible account, if desired. This needs separate setup and cannot be secured with a public static key alone. The hidden honeypot is basic spam prevention, not an unbreakable bot defence.
 
