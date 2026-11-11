@@ -1,0 +1,19 @@
+{
+  "brand": "Northamptonshire Tutoring",
+  "domain": "https://northamptonshiretutoring.com",
+  "parent": "North Wales Tutoring Group",
+  "parent_url": "https://nwttutoring.com/",
+  "motto": "Delivering a better future",
+  "email": "northamptonshire@nwttutoring.com",
+  "phone_display": "+44 7480 231362",
+  "phone_international": "+447480231362",
+  "whatsapp": "https://wa.me/447480231362",
+  "facebook": "https://www.facebook.com/northamptonshiretutoring",
+  "instagram": "https://www.instagram.com/northamptonshiretutoring/",
+  "web3forms_access_key": "7cfb8b83-2221-4866-8be3-087c5dfedd46",
+  "gcse_from_per_hour": 20,
+  "a_level_from_per_hour": 25,
+  "exam_boards": ["AQA", "Pearson Edexcel", "OCR", "WJEC", "Eduqas", "Cambridge International (CAIE)"],
+  "delivery": "Online, one-to-one",
+  "organisation_address_public": false
+}
