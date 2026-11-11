@@ -16,7 +16,7 @@
     if(!form.elements.access_key?.value){notice('Form not configured','Please email safeguarding@nwttutoring.com directly.','error');return;}
     lastAttempt=Date.now();submit.disabled=true;const old=submit.textContent;submit.textContent='Submitting your report…';message('Submitting your safeguarding report…');
     try{
-      const payload=Object.fromEntries(new FormData(form).entries());delete payload.redirect;payload.botcheck=false;
+      const payload=Object.fromEntries(new FormData(form).entries());delete payload.redirect;payload.botcheck=false;payload.name=payload.reporter_name;payload.email=payload.reporter_email;payload.message=payload.concern_details;
       const response=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
       const result=await response.json();if(!response.ok||result.success!==true)throw Error(result.message||'Unable to submit');
       form.reset();message('Your safeguarding concern has been submitted.');
