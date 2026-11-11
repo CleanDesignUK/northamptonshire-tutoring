@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Elizabeth",
+    "subjects": "Biology, Chemistry & Combined Science",
+    "level": "KS3 · GCSE · A-Level",
+    "summary": "Biochemistry student at the University of Sheffield. Supports Biology, Chemistry and Combined Science with adaptable lessons and exam-question practice.",
+    "focus": "Science and exam technique",
+    "initials": "EL"
+  },
+  {
+    "name": "Tomos",
+    "subjects": "Maths & Welsh-medium Maths",
+    "level": "GCSE · A-Level",
+    "summary": "Cardiff University Maths student supporting GCSE and A-Level Mathematics through Welsh or English, including WJEC.",
+    "focus": "Maths and WJEC",
+    "initials": "TO"
+  },
+  {
+    "name": "Arianwen",
+    "subjects": "Biology & Chemistry",
+    "level": "KS3 · GCSE",
+    "summary": "Clear explanations of GCSE Biology and Chemistry topics, including WJEC specification content.",
+    "focus": "Science foundations",
+    "initials": "AR"
+  },
+  {
+    "name": "Georgia",
+    "subjects": "Maths, Biology, Chemistry & 11+",
+    "level": "Primary · GCSE · A-Level",
+    "summary": "Cardiff medical student with experience supporting primary and 11+ pupils, Foundation GCSE Maths, and A-Level Biology and Chemistry.",
+    "focus": "Primary and science",
+    "initials": "GE"
+  },
+  {
+    "name": "Muskan",
+    "subjects": "Maths, English, Science & UCAT",
+    "level": "Primary · GCSE · A-Level",
+    "summary": "Supports GCSE Maths, English and Sciences, alongside A-Level Biology, Chemistry and UCAT preparation.",
+    "focus": "GCSE and UCAT",
+    "image": "muskan.jpg"
+  },
+  {
+    "name": "Grace",
+    "subjects": "Maths & Further Maths",
+    "level": "KS3 · GCSE · A-Level",
+    "summary": "Patient support for building mathematical understanding, identifying gaps and practising exam questions.",
+    "focus": "Maths and Further Maths",
+    "initials": "GR"
+  },
+  {
+    "name": "May",
+    "subjects": "Business, Economics, Humanities & Chinese",
+    "level": "GCSE · A-Level · IB · University",
+    "summary": "Experienced academic coach and university external examiner supporting Business, Economics, Chinese, History, Geography and Art & Design.",
+    "focus": "Business and languages",
+    "image": "may.jpg"
+  },
+  {
+    "name": "Shara",
+    "subjects": "Physics, Chemistry & Biology",
+    "level": "KS3 · GCSE · A-Level",
+    "summary": "Qualified Science teacher with QTS, a PGCE and over seven years of tutoring experience, including GCSE Combined Science.",
+    "focus": "Qualified science teacher",
+    "initials": "SH"
+  },
+  {
+    "name": "Shannon",
+    "subjects": "English, Welsh & Modern Languages",
+    "level": "Primary · GCSE · Adults",
+    "summary": "Qualified teacher with 10 years of tutoring experience, including English, Welsh, Spanish and support for additional learning needs.",
+    "focus": "Languages and English",
+    "initials": "SN"
+  },
+  {
+    "name": "Madeleine",
+    "subjects": "French, Spanish, Primary & 11+",
+    "level": "Primary · KS3 · GCSE",
+    "summary": "Qualified teacher covering French, Spanish, Primary English and Maths, SATs and 11+ preparation.",
+    "focus": "Languages and SATs",
+    "initials": "MA"
+  },
+  {
+    "name": "Jordan",
+    "subjects": "Maths, Further Maths & Physics",
+    "level": "GCSE · A-Level",
+    "summary": "Imperial College engineering student helping students build confidence in GCSE and A-Level Maths, Further Maths and Physics.",
+    "focus": "STEM subjects",
+    "image": "jordan.jpg"
+  },
+  {
+    "name": "Wahida",
+    "subjects": "English Language & Literature",
+    "level": "KS3 · GCSE · A-Level",
+    "summary": "Experienced secondary English teacher, former Head of English and AQA/Edexcel examiner.",
+    "focus": "English and exam technique",
+    "initials": "WA"
+  },
+  {
+    "name": "Ffion",
+    "subjects": "Health & Social Care, Childcare & Travel",
+    "level": "GCSE · A-Level · Vocational",
+    "summary": "Supports Health & Social Care, Child Development, Childcare, Travel & Tourism and other vocational qualifications, with examiner experience.",
+    "focus": "Vocational courses",
+    "initials": "FF"
+  },
+  {
+    "name": "Patrick",
+    "subjects": "English Language & Welsh-medium English",
+    "level": "KS3 · GCSE",
+    "summary": "English Language educator and secondary English PGCE student with experience teaching English Language and lessons through Welsh or English.",
+    "focus": "English confidence",
+    "image": "patrick.jpg"
+  },
+  {
+    "name": "Mandy",
+    "subjects": "Primary, Maths, English & Science",
+    "level": "Primary · KS3 · GCSE",
+    "summary": "Qualified teacher with extensive school experience and a calm approach to primary, 11+, Maths, English, Science and SEND support.",
+    "focus": "Primary and SEND",
+    "image": "mandy.jpg"
+  },
+  {
+    "name": "Martin",
+    "subjects": "Maths, Computer Science & Combined Science",
+    "level": "KS3 · GCSE · A-Level",
+    "summary": "STEM tutor supporting Maths, Computer Science and Combined Science with clear problem-solving methods.",
+    "focus": "Maths and computing",
+    "image": "martin.jpg"
+  }
+]

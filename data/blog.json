@@ -1,5 +1,56 @@
 [
-{"slug":"how-to-choose-gcse-maths-tutor-northamptonshire","title":"How to choose a GCSE Maths tutor in Northamptonshire","description":"A practical guide for Northamptonshire parents choosing an online GCSE Maths tutor: exam board, topics, lesson format and questions to ask.","date":"2026-11-11","category":"GCSE Maths","image":"maths-study.webp","read_minutes":5},
-{"slug":"gcse-physics-revision-exam-technique","title":"GCSE Physics revision: equations, working and exam technique","description":"Why GCSE Physics students lose marks, and how to practise calculations, explanations and required practical questions with an online tutor.","date":"2026-11-11","category":"GCSE Physics","image":"physics-study.webp","read_minutes":5},
-{"slug":"a-level-maths-physics-study-plan-northamptonshire","title":"A-Level Maths and Physics: a realistic weekly study plan","description":"How sixth-form students can plan Maths and Physics practice, review weak topics and use online tuition effectively.","date":"2026-11-11","category":"A-Level","image":"study-session.webp","read_minutes":6}
+  {
+    "slug": "how-to-choose-gcse-maths-tutor-northamptonshire",
+    "title": "How to choose a GCSE Maths tutor in Northamptonshire",
+    "description": "A practical guide for Northamptonshire parents choosing an online GCSE Maths tutor: exam board, topics, lesson format and questions to ask.",
+    "date": "2026-11-11",
+    "category": "GCSE Maths",
+    "image": "maths-study.webp",
+    "read_minutes": 5
+  },
+  {
+    "slug": "gcse-physics-revision-exam-technique",
+    "title": "GCSE Physics revision: equations, working and exam technique",
+    "description": "Why GCSE Physics students lose marks, and how to practise calculations, explanations and required practical questions with an online tutor.",
+    "date": "2026-11-11",
+    "category": "GCSE Physics",
+    "image": "physics-study.webp",
+    "read_minutes": 5
+  },
+  {
+    "slug": "a-level-maths-physics-study-plan-northamptonshire",
+    "title": "A-Level Maths and Physics: a realistic weekly study plan",
+    "description": "How sixth-form students can plan Maths and Physics practice, review weak topics and use online tuition effectively.",
+    "date": "2026-11-11",
+    "category": "A-Level",
+    "image": "study-session.webp",
+    "read_minutes": 6
+  },
+  {
+    "slug": "a-level-economics-essay-technique-northamptonshire",
+    "title": "A-Level Economics essay technique: stronger evaluation and analysis",
+    "category": "A-Level Economics",
+    "date": "2026-11-11",
+    "read_minutes": 6,
+    "description": "How A-Level Economics students can strengthen chains of analysis, diagrams, evaluation and timed essays before mocks or final exams.",
+    "image": "study-session.webp"
+  },
+  {
+    "slug": "gcse-computer-science-revision-ocr-aqa",
+    "title": "GCSE Computer Science revision: OCR and AQA topic priorities",
+    "category": "GCSE Computer Science",
+    "date": "2026-11-11",
+    "read_minutes": 6,
+    "description": "A practical GCSE Computer Science revision plan: programming, networks, algorithms, theory and exam practice for OCR or AQA.",
+    "image": "online-tutoring.webp"
+  },
+  {
+    "slug": "gcse-english-language-exam-technique-northamptonshire",
+    "title": "GCSE English Language revision: how to improve exam answers",
+    "category": "GCSE English",
+    "date": "2026-11-11",
+    "read_minutes": 7,
+    "description": "Improve GCSE English Language reading and writing answers with a specification-first revision routine and clearer paragraph structures.",
+    "image": "study-session.webp"
+  }
 ]

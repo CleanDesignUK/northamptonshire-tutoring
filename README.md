@@ -61,7 +61,7 @@ Do **not** edit the generated header/footer in all HTML pages individually. They
 - Access key installed from the request: `7cfb8b83-2221-4866-8be3-087c5dfedd46`.
 - Required enquiry fields: name, email, phone and message. Optional level and subject fields help qualification.
 - Hidden `botcheck` honeypot (not a visible checkbox), bot speed check, client-side phone validation, duplicate-attempt cooldown and provider-side spam filtering.
-- The form uses JSON AJAX so people stay on the page, with a clear success or fallback error; ordinary HTML POST works if JavaScript is disabled.
+- The form uses JSON AJAX so visitors stay on the same page. A successful submission shows a SweetAlert2 confirmation. If JavaScript is disabled, it does not submit or redirect; users can use WhatsApp/email instead.
 - **Before launch:** verify the Web3Forms key is active, points to the intended inbox and accepts submissions from your domain. Send *one real test enquiry* from the live domain. No live enquiries were sent during development.
 - **For stronger protection:** enable Web3Forms-supported invisible captcha / Turnstile on an eligible account, if desired. This needs separate setup and cannot be secured with a public static key alone. The hidden honeypot is basic spam prevention, not an unbreakable bot defence.
 
@@ -95,15 +95,3 @@ Bootstrap code is distributed under the MIT License. Other artwork and tutor pho
 6. Verify the privacy notice and consent wording against the final hosting/tracking setup.
 7. Submit `https://northamptonshiretutoring.com/sitemap.xml` to your search-engine webmaster tools.
 8. If enabled later, connect GA4 / Meta Pixel with appropriate consent controls and analytics conversion tracking.
-
-## GitHub Pages project preview
-
-The generated pages now use relative navigation and asset links, so they can be
-served either from `https://cleandesignuk.github.io/northamptonshire-tutoring/`
-or the production domain root without a separate build.
-
-To enable the temporary preview, visit the repository's **Settings > Pages**,
-choose **Deploy from a branch**, select **main** and **/(root)**, then save.
-The `CNAME` file is deliberately not added to the GitHub repository until
-the custom domain DNS is ready. When you link the final domain in GitHub Pages
-settings, add `CNAME` containing `northamptonshiretutoring.com` and verify HTTPS.
