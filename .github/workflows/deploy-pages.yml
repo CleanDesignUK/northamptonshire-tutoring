@@ -27,7 +27,7 @@ jobs:
       - name: Prepare public website files
         run: |
           mkdir -p _site
-          cp -R *.html assets blog areas data _site/ 2>/dev/null || true
+          cp -R *.html assets blog locations data _site/
           for file in robots.txt sitemap.xml .nojekyll favicon.ico favicon.svg; do
             if [ -f "$file" ]; then cp "$file" _site/; fi
           done
