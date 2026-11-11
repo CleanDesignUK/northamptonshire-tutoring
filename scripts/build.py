@@ -167,7 +167,14 @@ def subject_cards():
       ('GCSE tutoring','gcse-tutoring-northamptonshire','mortarboard','Year 10 and Year 11 GCSE tutoring in a wide range of subjects, including Humanities, Languages and Sciences.'),
       ('A-Level tutoring','a-level-tutoring-northamptonshire','book','Sixth-form tutors for Maths, Sciences, Economics, Politics, English and other A-Level subjects.'),
       ('Primary & KS3','primary-tutoring-northamptonshire','pencil-square','Build essential Maths and English foundations, including SATs and Years 7–9.')]
-    return '<div class="row g-3">'+''.join(f'<div class="col-sm-6 col-lg-4"><a class="subject-card card-soft" href="/{slug}.html"><span class="subject-icon"><i class="bi bi-{icon}" aria-hidden="true"></i></span><h3>{E(name)}</h3><p>{E(detail)}</p><span class="card-cta">Explore tutoring</span></a></div>' for name,slug,icon,detail in contents)+'</div>'
+    return '<div class="row g-3">'+''.join(f'<div class="col-sm-6 col-lg-4"><a class="subject-card card-soft" href="/{slug}.html"><span class="subject-icon">{science_icon(icon)}</span><h3>{E(name)}</h3><p>{E(detail)}</p><span class="card-cta">Explore tutoring</span></a></div>' for name,slug,icon,detail in contents)+'</div>'
+
+
+def science_icon(icon):
+    """Use an inline, version-independent science flask for the Science card."""
+    if icon == 'flask-fill':
+        return '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 2h6"/><path d="M10 2v7.5l-5.7 9.1A2.2 2.2 0 0 0 6.2 22h11.6a2.2 2.2 0 0 0 1.9-3.4L14 9.5V2"/><path d="M7.5 16h9"/></svg>'
+    return f'<i class="bi bi-{icon}" aria-hidden="true"></i>'
 
 
 def locations_grid():
