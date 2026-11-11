@@ -23,10 +23,11 @@ for p in files:
     for name,value in [('h1',scan.h1),('title',scan.title),('description',scan.description),('canonical',scan.canonical)]:
         if value!=1:errs.append(f'{p.relative_to(ROOT)}: expected one {name}, got {value}')
     for href in scan.links:
-        if not href.startswith('/') or href.startswith('//'):continue
+        if not href or href.startswith(('#','//')) or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:', href):continue
         path=href.split('?')[0].split('#')[0]
-        if not path or path=='/':continue
-        if not (ROOT/path.lstrip('/')).exists():errs.append(f'{p.relative_to(ROOT)}: broken local path {href}')
+        if not path:continue
+        target = (ROOT / path.lstrip('/')) if path.startswith('/') else (p.parent / path)
+        if not target.exists():errs.append(f'{p.relative_to(ROOT)}: broken local path {href}')
     if 'application/ld+json' not in html:errs.append(f'{p.relative_to(ROOT)}: missing schema')
 urls=len(re.findall(r'<loc>',(ROOT/'sitemap.xml').read_text('utf-8')))
 print(f'Checked {len(files)} generated HTML pages; sitemap entries: {urls}')

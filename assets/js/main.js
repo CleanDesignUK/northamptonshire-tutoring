@@ -1,8 +1,11 @@
 (() => {
   'use strict';
   document.querySelectorAll('[data-year]').forEach(el => {el.textContent = String(new Date().getFullYear());});
-  const path = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
-  document.querySelectorAll('.navbar a.nav-link').forEach(a => {if (a.getAttribute('href') === path) a.classList.add('active');});
+  const path = location.pathname.replace(/\/$/, '/index.html');
+  document.querySelectorAll('.navbar a.nav-link').forEach(a => {
+    const target = new URL(a.getAttribute('href'), location.href).pathname;
+    if (target === path) a.classList.add('active');
+  });
   const cookieKey = 'northamptonshire_tutoring_cookie_choice_v1';
   const banner = document.getElementById('cookie-banner');
   const getChoice = () => {try{return localStorage.getItem(cookieKey)}catch{return null}};

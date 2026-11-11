@@ -95,3 +95,15 @@ Bootstrap code is distributed under the MIT License. Other artwork and tutor pho
 6. Verify the privacy notice and consent wording against the final hosting/tracking setup.
 7. Submit `https://northamptonshiretutoring.com/sitemap.xml` to your search-engine webmaster tools.
 8. If enabled later, connect GA4 / Meta Pixel with appropriate consent controls and analytics conversion tracking.
+
+## GitHub Pages project preview
+
+The generated pages now use relative navigation and asset links, so they can be
+served either from `https://cleandesignuk.github.io/northamptonshire-tutoring/`
+or the production domain root without a separate build.
+
+To enable the temporary preview, visit the repository's **Settings > Pages**,
+choose **Deploy from a branch**, select **main** and **/(root)**, then save.
+The `CNAME` file is deliberately not added to the GitHub repository until
+the custom domain DNS is ready. When you link the final domain in GitHub Pages
+settings, add `CNAME` containing `northamptonshiretutoring.com` and verify HTTPS.

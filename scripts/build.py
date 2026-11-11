@@ -9,6 +9,7 @@ from pathlib import Path
 from html import escape as E
 from datetime import date
 import json
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 read = lambda p: (ROOT / p).read_text(encoding='utf-8')
@@ -111,11 +112,25 @@ def base(title,desc,path,body,extra_schema=None,ogtype='website'):
     return head
 
 
-def write(path,html):
-    dest=ROOT / path.lstrip('/')
-    dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_text(html,encoding='utf-8')
-    print('built',dest.relative_to(ROOT))
+def write(path, html):
+    # Relative internal links work at both the production domain root and
+    # GitHub Pages project previews (e.g. /northamptonshire-tutoring/).
+    # Canonical and structured-data URLs stay absolute to the production domain.
+    dest = ROOT / path.lstrip('/')
+    if dest.suffix == '.html':
+        prefix = '../' * (len(dest.relative_to(ROOT).parts) - 1)
+        def fix_link(match):
+            target = match.group('target')
+            if not target or target.startswith('#') or target.startswith('?'):
+                target = 'index.html' + target
+            return match.group('attr') + match.group('quote') + prefix + target + match.group('quote')
+        html = re.sub(
+            r'(?P<attr>\b(?:href|src|action|poster)=)(?P<quote>[\"\'])/(?P<target>[^\"\']*)(?P=quote)',
+            fix_link, html
+        )
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(html, encoding='utf-8')
+    print('built', dest.relative_to(ROOT))
 
 
 def button(text='Find a tutor',href='/contact.html',style='pink'):
