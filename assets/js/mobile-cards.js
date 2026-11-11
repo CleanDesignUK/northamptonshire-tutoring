@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const matchCard = '.subject-card,.network-card,.value-card,.price-card,.blog-card,.exam-card,.feature-card,.review-card,.testimonial-card,.tutor-card,.location-card,.card-soft,[class*="-card"]';
-  const targets = 'main .row,main .exam-card-grid,main .area-grid,main .breadth-grid,main .nt-review-grid';
+  const targets = 'main .row, main [class*="-grid"]';
   const panels = [...document.querySelectorAll(targets)];
   function qualifies(el) {
     if (el.closest('form,.safety-emergency,.policy-chapters')) return false;
