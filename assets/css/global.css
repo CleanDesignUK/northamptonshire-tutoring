@@ -8,3 +8,54 @@
 .whatsapp-float i{font-size:1.5rem}.card-cta{display:inline-flex;padding:10px 15px;border-radius:11px;background:#09096a;color:#fff!important;font-size:.82rem;font-weight:800;text-decoration:none;line-height:1.3}.card-soft:hover .card-cta,.subject-card:hover .card-cta{background:#d71994;color:#fff}
 .subject-card,.network-card{position:relative;cursor:pointer}.subject-card:focus-visible,.network-card:focus-visible{outline:3px solid #d71994;outline-offset:3px}
 @media(max-width:575px){.whatsapp-float{right:12px;bottom:13px;padding:12px 14px;gap:7px}.whatsapp-float span{font-size:.76rem}.whatsapp-float i{font-size:1.25rem}}
+
+/* 2026 NWT Group design system: navigation, safe-area spacing, footer and WhatsApp */
+.site-header .navbar{position:relative}
+.nav-mega{position:static}
+.navbar .mega-menu{width:min(1050px,calc(100vw - 36px));max-height:min(75vh,680px);overflow-y:auto;padding:24px;background:#fff;border-radius:22px;border:1px solid #e4e5f1;box-shadow:0 26px 75px #0b0b6040}
+.navbar .mega-menu.show{inset:100% auto auto 50%!important;transform:translateX(-50%)!important}
+.mega-heading{display:flex;gap:22px;justify-content:space-between;align-items:center;padding:0 4px 16px;border-bottom:1px solid #eee;margin-bottom:15px}
+.mega-heading strong{color:var(--navy);font:800 1.32rem Outfit,sans-serif}
+.mega-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 18px;padding:0;margin:0;list-style:none}
+.mega-group{list-style:none;min-width:0}
+.mega-group ul{list-style:none;padding:0;margin:0}
+.mega-label{display:block;color:#bc1782;font-size:.71rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;padding:8px 12px}
+.mega-group .dropdown-item{font-weight:650;white-space:normal;line-height:1.25}
+.exam-menu{min-width:260px;max-height:min(75vh,630px);overflow-y:auto}
+.site-header .navbar-nav>li>.nav-link{white-space:nowrap}
+.site-header .navbar-nav{gap:0}
+.site-header .nav-shell{max-width:1300px}
+.site-header .brand-text strong{font-size:1rem}
+.whatsapp-float,.whatsapp-float:focus-visible{background:#ff28a8!important;border:2px solid #fff!important;color:#fff!important;box-shadow:0 12px 34px #09096a35}
+.whatsapp-float:hover{background:#df0d8c!important}
+.crest-logo-link{background:#fff!important;border-radius:24px!important;padding:10px!important;max-width:192px}
+.footer-group-logo{width:164px!important;height:164px!important;max-height:none!important;object-fit:contain!important;border-radius:16px}
+.footer-brand-column{min-width:0}
+.footer-description{max-width:430px}
+.site-footer .footer-top{grid-template-columns:1.8fr .94fr .96fr 1.22fr;gap:30px}
+.legal-links{gap:14px;flex-wrap:wrap}
+@media(max-width:1199px){.site-header .navbar .nav-link{padding:.72rem .48rem!important;font-size:.82rem}.site-header .brand-text strong{font-size:.92rem}.site-footer .footer-top{gap:22px}}
+@media(max-width:991.98px){
+ .site-header .navbar-collapse{margin:12px 0 0;background:#f8f8ff;border:1px solid #ece8f5;border-radius:19px;padding:15px 18px 21px!important;box-shadow:0 12px 26px #09096a13}
+ .site-header .navbar-nav{align-items:stretch!important}
+ .site-header .navbar-nav>li{width:100%}
+ .site-header .navbar-nav .nav-link,.site-header .navbar-nav .dropdown-toggle{display:block;width:100%;padding:13px 14px!important;text-align:left;border-radius:11px}
+ .site-header .navbar-nav .nav-link:hover{background:#fff1f9}
+ .navbar .mega-menu,.navbar .mega-menu.show{position:static!important;transform:none!important;inset:auto!important;max-height:57vh;width:100%;box-shadow:none;border:1px solid #e5e2ee;padding:17px 14px}
+ .mega-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+ .navbar .dropdown-menu.exam-menu{position:static!important;transform:none!important;max-height:52vh;border:1px solid #e5e2ee;box-shadow:none;margin-left:0!important}
+ .site-footer .footer-top{grid-template-columns:1fr 1fr;gap:25px}
+}
+@media(max-width:575px){
+ .nav-shell{padding-left:max(14px,env(safe-area-inset-left))!important;padding-right:max(14px,env(safe-area-inset-right))!important}
+ .navbar-brand.brand{gap:7px}
+ .navbar-brand .brand-text strong{font-size:.88rem}
+ .site-header .navbar-collapse{margin:10px 4px 0;padding:14px 14px 18px!important}
+ .site-header .navbar-nav .nav-link{padding:12px 12px!important}
+ .mega-categories{grid-template-columns:1fr}
+ .mega-heading{align-items:flex-start;flex-direction:column;gap:10px}
+ .mega-menu .mega-group{border-bottom:1px solid #f0ecf2;padding-bottom:11px}
+ .site-footer .footer-top{grid-template-columns:1fr 1fr;gap:28px 17px}
+ .site-footer .footer-brand-column{grid-column:1/-1}
+ .footer-group-logo{width:138px!important;height:138px!important}
+}
