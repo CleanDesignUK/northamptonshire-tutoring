@@ -93,7 +93,7 @@ def base(title,desc,path,body,extra_schema=None,ogtype='website'):
 <meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#09096A">
 <meta property="og:type" content="{ogtype}"><meta property="og:site_name" content="Northamptonshire Tutoring">
 <meta property="og:title" content="{E(title,quote=True)}"><meta property="og:description" content="{E(desc,quote=True)}"><meta property="og:url" content="{E(canonical,quote=True)}">
-<meta property="og:image" content="{DOMAIN}/assets/images/study-session.webp"><meta property="og:image:alt" content="Student studying with books and notes">
+<meta property="og:image" content="{DOMAIN}/assets/images/nwt-group-social-1200x630.jpg"><meta property="og:image:alt" content="North Wales Tutoring Group crest and Northamptonshire Tutoring brand"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta name="twitter:image" content="{DOMAIN}/assets/images/nwt-group-social-1200x630.jpg"><meta name="twitter:image:alt" content="North Wales Tutoring Group branded crest">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title,quote=True)}"><meta name="twitter:description" content="{E(desc,quote=True)}">
 <link rel="icon" href="/assets/images/nwt-group-mark.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,7 +106,7 @@ def base(title,desc,path,body,extra_schema=None,ogtype='website'):
 {FOOT}{COOKIE}
 <a class="whatsapp-float" href="https://wa.me/447480231362?text=Hi%2C%20I%27d%20like%20to%20find%20a%20Northamptonshire%20tutor." target="_blank" rel="noopener" aria-label="Chat to Northamptonshire Tutoring on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>Chat to our team</span></a>
 <script defer src="/assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script><script defer src="/assets/js/main.js"></script><script defer src="/assets/js/forms.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script><script defer src="/assets/js/main.js"></script><script defer src="/assets/js/forms.js"></script><script defer src="/assets/js/mobile-cards.js"></script><script defer src="/assets/js/gtm-consent.js"></script>
 </body></html>'''
     # SRI must match official JS CDN. We avoid a potentially wrong SRI hash by removing it.
     head=head.replace(' integrity="sha384-ENjdO4Dr2bkBIFxQpeo9MfN07P45sQ+eJA9l+ItC6Vzu6F8V+/TJcDiY/7ZmTT"','')

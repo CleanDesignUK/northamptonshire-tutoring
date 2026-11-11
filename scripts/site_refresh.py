@@ -14,6 +14,7 @@ from build import base, write, crumb_schema, faq_schema, service_schema, DOMAIN
 SITE=json.loads((ROOT/'data/site.json').read_text())
 LOCATIONS=json.loads((ROOT/'data/locations.json').read_text())
 SUBJECTS=json.loads((ROOT/'data/subjects.json').read_text())
+REVIEWS=json.loads((ROOT/'data/testimonials.json').read_text(encoding='utf-8'))
 PARENT_SUBJECTS={
  'Maths & science': ['Maths','Further Maths','Biology','Chemistry','Physics','Combined Science','Computer Science'],
  'English & languages':['English Language','English Literature','Welsh','French','Spanish','Chinese','Modern Foreign Languages','ESOL / EFL'],
@@ -131,7 +132,7 @@ def safeguarding_page():
     policy=''.join(f'<article class="policy-chapter" id="policy-{i+1}"><span>{i+1:02d}</span><div><h3>{E(head)}</h3><p>{E(content)}</p></div></article>' for i,(head,content) in enumerate(panels))
     body=top+emergency+f'''<section class="section safety-lead"><div class="container"><div class="row g-5 align-items-center"><div class="col-lg-5"><span class="eyebrow">Designated Safeguarding Lead</span><h2>Jesse</h2><p class="lead">Founder &amp; Designated Safeguarding Lead</p><p>Jesse leads our group's safeguarding procedures, including receiving concerns, maintaining proportionate records and seeking advice or referrals when necessary.</p><p>Confidential safeguarding email: <a href="mailto:{mail}">{mail}</a>.</p></div><div class="col-lg-7"><div class="safety-values"><div><i class="bi bi-shield-check" aria-hidden="true"></i><h3>Professional boundaries</h3><p>Appropriate conduct and communication in every lesson.</p></div><div><i class="bi bi-person-check" aria-hidden="true"></i><h3>Role-appropriate checks</h3><p>Suitability and safeguarding checks appropriate to each tutor.</p></div><div><i class="bi bi-megaphone" aria-hidden="true"></i><h3>Clear reporting</h3><p>Parents, learners and tutors can raise a concern.</p></div><div><i class="bi bi-journal-check" aria-hidden="true"></i><h3>Regular review</h3><p>Procedures are reviewed at least annually.</p></div></div></div></div></div></section><section class="section section-soft" id="safeguarding-policy"><div class="container"><div class="safety-policy-layout"><div class="safety-policy-heading"><span class="eyebrow">Safeguarding policy</span><h2>Our safeguarding commitments and procedures</h2><p>Every concern deserves to be taken seriously. The following explains our approach for families, tutors and learners across Northamptonshire.</p><a class="btn btn-pink" href="#report-a-concern">Raise a concern</a></div><div class="policy-chapters">{policy}</div></div></div></section>'''
     body+=f'''<section class="section safety-form-area" id="report-a-concern"><div class="container"><div class="row g-5"><div class="col-lg-5"><span class="eyebrow">Confidential reporting</span><h2>Report a safeguarding concern</h2><p>Use this form if you have a concern about a learner's safety or someone's behaviour in connection with our tutoring service. You do not need to prove what happened before reporting.</p><div class="safety-warning"><strong>This form is not monitored for emergencies.</strong><p>For immediate danger call 999. For other child protection concerns you may contact Northamptonshire Children's Trust on <a href="tel:03001267000">0300 126 7000</a>.</p></div><p>Prefer email? Write directly to <a href="mailto:{mail}">{mail}</a>.</p></div><div class="col-lg-7"><form id="safeguardingForm" class="safeguarding-form contact-section-form" action="#" method="POST" data-safeguarding><h2>Safeguarding concern form</h2><p>We will handle the report as sensitively as possible and may need to share relevant information to protect a learner.</p><input type="hidden" name="access_key" value="{key}"><input type="hidden" name="subject" value="URGENT: Northamptonshire Tutoring Safeguarding Concern"><input type="hidden" name="source" value="Northamptonshire Tutoring Safeguarding Page"><input name="botcheck" type="checkbox" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none!important"><fieldset><legend>Your details</legend><div class="row g-3"><div class="col-md-6"><label class="form-label" for="sg-name">Your name *</label><input class="form-control" id="sg-name" name="reporter_name" required maxlength="120"></div><div class="col-md-6"><label class="form-label" for="sg-email">Email address *</label><input class="form-control" type="email" id="sg-email" name="reporter_email" required></div><div class="col-md-6"><label class="form-label" for="sg-phone">Phone / WhatsApp number</label><input class="form-control" type="tel" id="sg-phone" name="reporter_phone"></div><div class="col-md-6"><label class="form-label" for="sg-relation">Your relationship to the learner *</label><select class="form-select" id="sg-relation" name="relationship_to_learner" required><option value="">Select relationship</option><option>Parent</option><option>Carer</option><option>Learner</option><option>Tutor</option><option>Family member</option><option>Other</option></select></div></div></fieldset><fieldset><legend>Learner and tutor</legend><div class="row g-3"><div class="col-md-6"><label class="form-label" for="sg-learner">Learner's name (if known)</label><input class="form-control" id="sg-learner" name="learner_name"></div><div class="col-md-6"><label class="form-label" for="sg-tutor">Tutor concerned (if applicable)</label><input class="form-control" id="sg-tutor" name="tutor_concerned"></div><div class="col-12"><label class="form-label" for="sg-context">Where did the concern arise?</label><select class="form-select" id="sg-context" name="concern_context"><option value="">Please select</option><option>Online lesson</option><option>Message or communication</option><option>In-person lesson</option><option>Behaviour outside tutoring</option><option>Other</option></select></div></div></fieldset><fieldset><legend>What happened?</legend><div class="row g-3"><div class="col-md-6"><label class="form-label" for="sg-date">Date of concern</label><input class="form-control" type="date" id="sg-date" name="incident_date"></div><div class="col-md-6"><label class="form-label" for="sg-time">Approximate time</label><input class="form-control" type="time" id="sg-time" name="incident_time"></div><div class="col-12"><label class="form-label" for="sg-details">Describe the concern *</label><textarea class="form-control" id="sg-details" name="concern_details" rows="7" maxlength="9000" placeholder="Please describe what you know, including relevant dates, words used and what concerns you. Do not include or upload explicit images of children." required></textarea></div><div class="col-12"><label class="form-label" for="sg-action">Have you already taken any action or contacted an authority?</label><textarea class="form-control" id="sg-action" name="actions_already_taken" rows="3" maxlength="3000" placeholder="Optional"></textarea></div></div></fieldset><button type="submit" class="btn btn-pink safeguarding-submit-btn">Submit safeguarding concern</button><p class="form-status" role="status" aria-live="polite"></p><p class="form-note">Submitted securely through Web3Forms. This report is separate from our standard tutoring enquiry process. Read our <a href="/privacy.html">privacy policy</a>.</p></form></div></div></div></section>'''
-    body+='''<section class="section section-soft"><div class="container"><span class="eyebrow">Guidance &amp; external reporting</span><h2>Safeguarding advice and support</h2><div class="row g-3"><div class="col-md-4"><div class="value-card card-soft"><h3>Northamptonshire Children's Trust</h3><p>For concerns about a child in Northamptonshire, with routes for urgent and non-emergency referrals.</p><a class="btn btn-outline-navy" href="https://nctrust.co.uk/report-a-concern-or-request-support/" target="_blank" rel="noopener">External safeguarding route</a></div></div><div class="col-md-4"><div class="value-card card-soft"><h3>Department for Education</h3><p>Read the current safeguarding guidance for schools and colleges in England.</p><a class="btn btn-outline-navy" href="https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" target="_blank" rel="noopener">KCSIE 2026 guidance</a></div></div><div class="col-md-4"><div class="value-card card-soft"><h3>Safeguarding concerns about us</h3><p>If your concern involves our DSL, contact children's services or the police directly. You do not need to report internally first.</p><a class="btn btn-outline-navy" href="https://www.northants.police.uk/advice/advice-and-information/caa/child-abuse/how-to-report-possible-child-abuse/" target="_blank" rel="noopener">Northamptonshire Police</a></div></div></div></div></section>'''
+
     path='/safeguarding.html'
     html=base('Safeguarding & Child Protection | Northamptonshire Tutoring','Read Northamptonshire Tutoring safeguarding policy, Designated Safeguarding Lead Jesse, how to report a concern and the confidential safeguarding@nwttutoring.com contact.',path,body,[crumb_schema([('Safeguarding',path)])])
     html=html.replace('<script defer src="/assets/js/forms.js"></script>','<script defer src="/assets/js/forms.js"></script><script defer src="/assets/js/safeguarding.js"></script>')
@@ -192,6 +193,34 @@ def local_schema(path,kind):
       'parentOrganization':{'@type':'Organization','name':'North Wales Tutoring Group','url':SITE['parent_url']},
       'knowsAbout':[n for names in PARENT_SUBJECTS.values() for n in names]+['SATs','11+','13+','UCAT','TMUA','GMAT','GCSE','A-Level','AQA','Pearson Edexcel','OCR','WJEC','Eduqas','Cambridge International']}
 
+def group_review_section():
+    """Faithfully reproduce parent-company feedback without attributing it to this branch."""
+    cards=[]
+    for item in REVIEWS:
+        name=E(item['name']);role=E(item['role']);context=E(item['context'])
+        quote=E(item['quote'])
+        cards.append(
+            '<article class="nt-review-card">'
+            '<span class="nt-review-category">'+context+'</span>'
+            '<blockquote>'+quote+'</blockquote>'
+            '<div class="nt-review-byline"><span class="nt-review-avatar" aria-hidden="true">'+name[:1]+'</span>'
+            '<span><strong>'+name+'</strong><small>'+role+'</small></span></div></article>'
+        )
+    return (
+        '<section id="nt-group-testimonials" class="nt-testimonials section" aria-labelledby="nt-review-title">'
+        '<div class="container"><div class="nt-review-head"><div>'
+        '<span class="eyebrow">Real family feedback from our parent group</span>'
+        '<h2 id="nt-review-title">What families and students say about North Wales Tutoring</h2>'
+        '<p>Unedited feedback from families and students supported by North Wales Tutoring Group. '
+        'These are group-wide reviews, not claims about Northamptonshire-specific students.</p>'
+        '</div></div>'
+        '<div class="nt-review-grid" data-mobile-carousel="reviews">'+''.join(cards)+'</div>'
+        '<p class="nt-review-attribution">Testimonials reproduced exactly from '
+        '<a href="https://northwalestutoring.com/" target="_blank" rel="noopener">'
+        'North Wales Tutoring</a>, our parent group.</p></div></section>'
+    )
+
+
 def refresh_all():
     NAV=nav_html();FOOT=footer_html();count=0
     skip={'source','components','.git','_site','node_modules'}
@@ -199,6 +228,27 @@ def refresh_all():
     for n,p in enumerate(sorted(pages)):
         rel=p.relative_to(ROOT).as_posix();kind=page_classification(rel)
         txt=p.read_text(encoding='utf8')
+        # Preserve emergency contact guidance but remove the separate external-reporting panel.
+        if kind=='safety':
+            txt=re.sub(r'<section class="section section-soft"><div class="container"><span class="eyebrow">Guidance &amp; external reporting</span>[\\s\\S]*?</section>','',txt,count=1)
+        # Parent-group reviews are added to key conversion pages without rewriting the quotes.
+        if kind in ('home','about','contact') and 'id="nt-group-testimonials"' not in txt:
+            txt=txt.replace('</main>',group_review_section()+'</main>',1)
+        # A purpose-built 1200 x 630 brand image is used by WhatsApp, LinkedIn and Facebook.
+        social_image=DOMAIN+'/assets/images/nwt-group-social-1200x630.jpg'
+        txt=re.sub(r'<meta property="og:image" content="[^"]*">',lambda m:'<meta property="og:image" content="'+social_image+'">',txt,count=1)
+        txt=re.sub(r'<meta property="og:image:alt" content="[^"]*">',lambda m:'<meta property="og:image:alt" content="North Wales Tutoring Group crest and Northamptonshire Tutoring brand">',txt,count=1)
+        for prop,value in [('og:image:width','1200'),('og:image:height','630'),('og:image:type','image/jpeg')]:
+            if 'property="'+prop+'"' not in txt:
+                txt=txt.replace('</head>','<meta property="'+prop+'" content="'+value+'"></head>',1)
+        if 'name="twitter:image"' not in txt:
+            txt=txt.replace('</head>','<meta name="twitter:image" content="'+social_image+'"></head>',1)
+        if 'name="twitter:image:alt"' not in txt:
+            txt=txt.replace('</head>','<meta name="twitter:image:alt" content="North Wales Tutoring Group branded crest"></head>',1)
+        # Tracking only starts after visitors agree to optional cookies.
+        for jsfile in ('mobile-cards.js','gtm-consent.js'):
+            if '/assets/js/'+jsfile not in txt and 'assets/js/'+jsfile not in txt:
+                txt=txt.replace('</body>','<script defer src="/assets/js/'+jsfile+'"></script></body>',1)
         m=re.search(r'<a class="skip-link"[\s\S]*?</header>',txt)
         if m:txt=txt[:m.start()]+NAV+txt[m.end():]
         else:print('WARN: missing nav',rel)
