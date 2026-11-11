@@ -140,3 +140,43 @@
 @media(max-width:991px){.insight-variant-0 .insight-grid,.insight-variant-1 .insight-grid,.insight-variant-2 .insight-grid{grid-template-columns:1fr}.insight-variant-0 .insight-chips{flex-direction:row}.safety-policy-layout{grid-template-columns:1fr;gap:20px}.safety-policy-heading{position:static}.directory-category{grid-template-columns:1fr;gap:20px}.emergency-grid{grid-template-columns:1fr}.safety-contacts{flex-direction:row;flex-wrap:wrap}}
 @media(max-width:767px){.exam-layout,.exam-layout-1,.exam-layout-2,.exam-layout-3{display:flex;flex-direction:column}.exam-detail-aside{display:flex!important}.exam-card-grid{grid-template-columns:1fr}.insight-variant-3 .insight-side{display:block}.directory-list{grid-template-columns:1fr}.page-article.layout-3 .article-content,.page-article.layout-8 .article-content{margin-left:auto}.safety-values{grid-template-columns:1fr 1fr}.policy-chapter{grid-template-columns:34px 1fr;padding:17px}.layout-1 .page-hero,.layout-3 .page-hero,.layout-8 .page-hero{padding-block:54px}.layout-3 .page-hero .container{padding-left:20px}.layout-8 .page-hero:before{opacity:.1}}
 @media(max-width:480px){.insight-side{padding:23px}.insight-chips{padding:14px;align-items:start!important}.safety-values{grid-template-columns:1fr}.exam-tile{min-height:0}.exam-detail-aside{padding:24px}.directory-subject{padding:15px}.safety-contacts .btn{width:100%}}
+
+
+/* NWT Group testimonials, using the reviews exactly as provided by the parent site. */
+.nt-testimonials{background:linear-gradient(150deg,#f5f3ff 0%,#fff 70%);padding-block:clamp(50px,6vw,94px);}
+.nt-testimonials .nt-review-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px;}
+.nt-testimonials .nt-review-head h2{max-width:710px;}
+.nt-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.nt-review-card{background:#fff;border:1px solid #e6e4f0;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 28px rgba(8,8,80,.06);min-width:0;}
+.nt-review-card .nt-review-category{font-size:.8rem;font-weight:800;letter-spacing:.045em;text-transform:uppercase;color:var(--navy);}
+.nt-review-card blockquote{margin:0;font-size:.96rem;line-height:1.65;color:var(--ink);flex:1;}
+.nt-review-card .nt-review-byline{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto;}
+.nt-review-card .nt-review-avatar{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border-radius:50%;background:var(--pink-light);font-weight:800;color:var(--navy);}
+.nt-review-card .nt-review-byline strong,.nt-review-card .nt-review-byline small{display:block;}
+.nt-review-card .nt-review-byline small{color:var(--muted);}
+.nt-review-attribution{font-size:.88rem;color:var(--muted);margin:18px 0 0;}
+.nt-review-attribution a{text-decoration:underline;text-underline-offset:3px;}
+/* Mobile slider controls appear only at small screen widths. */
+.nt-scroll-controls{display:none;}
+@media(max-width:991.98px){
+  .nt-review-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .nt-card-slider{max-width:100%;min-width:0;position:relative;margin:0;}
+  .nt-scroll-controls{display:flex;justify-content:flex-end;gap:9px;margin:0 0 13px;}
+  .nt-scroll-arrow{display:grid;place-items:center;width:42px;height:42px;min-width:42px;border:2px solid var(--navy);background:var(--white);border-radius:50%;color:var(--navy);cursor:pointer;transition:background .15s ease,color .15s ease;}
+  .nt-scroll-arrow:not(:disabled):hover,.nt-scroll-arrow:not(:disabled):focus-visible{background:var(--pink);border-color:var(--pink);color:var(--navy);}
+  .nt-scroll-arrow:disabled{opacity:.3;cursor:default;}
+  .nt-card-viewport{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 2px 12px;}
+  .nt-card-viewport::-webkit-scrollbar{display:none;}
+  .nt-card-viewport:focus-visible{outline:3px solid var(--pink);outline-offset:3px;}
+  .nt-card-track{display:flex!important;flex-wrap:nowrap!important;grid-template-columns:none!important;gap:14px!important;margin:0!important;align-items:stretch!important;}
+  .nt-card-track > *{flex:0 0 min(82%,355px)!important;width:min(82%,355px)!important;max-width:none!important;min-width:0!important;scroll-snap-align:start;padding:0!important;margin:0!important;box-sizing:border-box;}
+  .nt-card-track > * > a,.nt-card-track > * > article,.nt-card-track > * > .card-soft{height:100%;}
+  .nt-review-grid.nt-card-track{grid-template-columns:none!important;}
+  .nt-testimonials .nt-review-head{display:block;}
+}
+@media(max-width:575.98px){
+  .nt-review-grid{grid-template-columns:1fr;}
+  .nt-card-track > *{flex-basis:87%!important;width:87%!important;}
+  .nt-testimonials .nt-review-head h2{font-size:clamp(1.6rem,6.5vw,2.2rem);}
+}
+@media(prefers-reduced-motion:reduce){.nt-scroll-arrow{transition:none}.nt-card-viewport{scroll-behavior:auto!important}}

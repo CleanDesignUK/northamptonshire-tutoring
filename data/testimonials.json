@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Geverson",
+    "role": "Parent",
+    "quote": "“Everything’s very good here, thank you! My son got 2 A*s in Maths and Further Maths, and 2 As in Computer Science and Economics. And he got into Bath!! We’re absolutely delighted and very proud of him. Thank you so much for all your help and support along the way. It’s really appreciated and definitely helped him get to this point.”",
+    "context": "A-Level Results 2 A*s + 2 As University of Bath",
+    "source": "North Wales Tutoring"
+  },
+  {
+    "name": "Janine",
+    "role": "Parent",
+    "quote": "“Great news! She had an A in Chemistry, A in Biology, B in French and A* in Welsh Baccalaureate, so she’s thrilled. She’s going to vet school at Liverpool University, her first choice. Many thanks to you and Emmanuel for all the support last academic year.”",
+    "context": "A-Level Results A, A, B & A* Liverpool Vet School",
+    "source": "North Wales Tutoring"
+  },
+  {
+    "name": "Nicole",
+    "role": "Parent",
+    "quote": "“She had an A* in Psychology 🎉”",
+    "context": "A-Level Result A* Psychology Excellent result",
+    "source": "North Wales Tutoring"
+  },
+  {
+    "name": "Ethan",
+    "role": "Student",
+    "quote": "“The 2 tutors I had, Kimmone for Economics and Howard for Maths were very knowledgeable. Both helped me target weak areas and gaps of knowledge in a friendly way, allowing me to improve academically. I sat my WJEC A Level exams and managed to turn a U into a C in Economics and an E in Maths into a D within a space of 8–12 lessons. Would definitely recommend.”",
+    "context": "U → C & E → D WJEC A-Level Results",
+    "source": "North Wales Tutoring"
+  },
+  {
+    "name": "Sarah",
+    "role": "Parent",
+    "quote": "“We can’t thank Jesse enough for his maths tuition. He tutored my daughter in the run up to her GCSEs and she went from a 5 to a 7 in a short space of time. Jesse’s ability to identify gaps and personalise the tuition allowed my daughter to reach her potential. Jesse was supportive and patient, and helped to build her confidence along the way. I would highly recommend to others.”",
+    "context": "GCSE Maths 5 → 7 Student Progress",
+    "source": "North Wales Tutoring"
+  },
+  {
+    "name": "Kristina",
+    "role": "Parent",
+    "quote": "“Jesse is extremely organised and his approach to tutoring is solid, from a goal setting but more importantly a plan setting perspective. He is currently preparing my son for GCSE and greatly helped him understand complex maths concepts and overcome his confusion. Jesse’s clear explanation and patient guidance made a noticeable difference in my son’s confidence and performance. I truly appreciate Jesse’s dedication and teaching style. Highly recommended.”",
+    "context": "GCSE Maths Confidence & Progress",
+    "source": "North Wales Tutoring"
+  }
+]
