@@ -244,6 +244,10 @@ def refresh_all():
         else:
             txt=re.sub(r'<a class="whatsapp-float"[\s\S]*?</a>',f'<a class="whatsapp-float" href="{E(msg,quote=True)}" target="_blank" rel="noopener" aria-label="Ask Northamptonshire Tutoring about {E(context,quote=True)} on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>Message us</span></a>',txt,count=1)
             if 'class="whatsapp-float"' not in txt:txt=txt.replace('</body>',f'<a class="whatsapp-float" href="{E(msg,quote=True)}" target="_blank" rel="noopener" aria-label="Message on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i><span>Message us</span></a></body>')
+        # Pre-fill every WhatsApp contact link, not only the floating action.
+        # Keep existing explicit messages intact; never place form contents in the URL.
+        txt=re.sub(r'(href=["\']https://wa\.me/447480231362)(["\'])',
+                   lambda m:m.group(1)+'?text='+quote(f"Hi Northamptonshire Tutoring, I'd like to ask about {context}. Could you help me?",safe='')+m.group(2),txt)
         # Guarantee contextually correct links in a GitHub Pages project subdirectory and custom domain.
         prefix='../'* (len(p.relative_to(ROOT).parts)-1)
         txt=re.sub(r'(?P<attr>\b(?:href|src)=(["\']))/(?P<target>[^"\']*)',lambda m:m.group('attr')+prefix+(m.group('target') or './'),txt)
