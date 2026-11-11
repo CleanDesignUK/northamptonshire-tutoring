@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Rebuild all pages and sitemap
+        run: python scripts/build.py
       - name: Validate website
         run: python scripts/check_site.py
       - name: Configure Pages
